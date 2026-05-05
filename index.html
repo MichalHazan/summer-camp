@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-
 <html dir="rtl" lang="he">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>קייטנת קיץ - גלי הדר</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-      rel="stylesheet"
-    />
-    <!-- style -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap");
-
       :root {
         --primary: #0088cc;
         --secondary: #ff6b6b;
         --accent: #ffd166;
         --light: #f8f9fa;
         --dark: #343a40;
+        --fuchsia-bg: #fce4f3;
+        --fuchsia-mid: #f9c5e8;
+        --fuchsia-deep: #e91e8c;
+        --fuchsia-text: #9c0060;
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
       body {
         font-family: "Heebo", sans-serif;
@@ -40,17 +31,11 @@
         scroll-behavior: smooth;
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-      /* Header styles */
+      /* Header */
       header {
         background: linear-gradient(135deg, var(--primary), #06b6d4);
         color: white;
@@ -70,23 +55,11 @@
         z-index: 2;
       }
 
-      .header-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("/api/placeholder/1200/500");
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-      }
-
       h1 {
         font-size: 3.5rem;
         font-weight: 900;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       }
 
       .header-tagline {
@@ -105,30 +78,19 @@
         font-weight: bold;
         font-size: 1.1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         margin: 10px;
         cursor: pointer;
       }
 
-      .btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-      }
+      .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+      .btn-primary { background-color: var(--accent); color: var(--dark); }
+      .btn-secondary { background-color: white; color: var(--primary); }
 
-      .btn-primary {
-        background-color: var(--accent);
-        color: var(--dark);
-      }
-
-      .btn-secondary {
-        background-color: white;
-        color: var(--primary);
-      }
-
-      /* Navigation */
+      /* Nav */
       nav {
         background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         position: sticky;
         top: 0;
         z-index: 100;
@@ -139,44 +101,20 @@
         justify-content: space-between;
         align-items: center;
         padding: 15px 0;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
-      .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary);
-        text-decoration: none;
-      }
+      .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
 
-      .nav-links {
-        display: flex;
-        list-style: none;
-      }
-
-      .nav-links li {
-        margin-right: 20px;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary);
-      }
+      .nav-links { display: flex; list-style: none; flex-wrap: wrap; gap: 5px; }
+      .nav-links li { margin-right: 20px; }
+      .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: color 0.3s; }
+      .nav-links a:hover { color: var(--primary); }
 
       /* Sections */
-      section {
-        padding: 80px 0;
-        scroll-margin-top: 80px;
-      }
-
-      section:nth-child(even) {
-        background-color: white;
-      }
+      section { padding: 80px 0; scroll-margin-top: 80px; }
+      section:nth-child(even) { background-color: white; }
 
       .section-title {
         text-align: center;
@@ -196,7 +134,7 @@
         border-radius: 2px;
       }
 
-      /* Features section */
+      /* Features */
       .features {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -209,33 +147,20 @@
         border-radius: 15px;
         padding: 30px;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .feature-box:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
+      .feature-box:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+      .feature-icon { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+      .feature-title { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark); }
 
-      .feature-icon {
-        font-size: 3rem;
-        color: var(--primary);
-        margin-bottom: 20px;
-      }
-
-      .feature-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--dark);
-      }
-
-      /* Schedule section */
+      /* Schedule */
       .schedule {
         background-color: #f8f9fa;
         border-radius: 15px;
         padding: 35px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       }
 
       .schedule-item {
@@ -245,35 +170,28 @@
         border-bottom: 1px solid #eee;
       }
 
-      .schedule-time {
-        font-weight: bold;
-        min-width: 100px;
-        color: var(--primary);
-      }
+      .schedule-time { font-weight: bold; min-width: 120px; color: var(--primary); }
 
-      /* Pricing section */
+      /* Pricing */
       .pricing-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 30px;
       }
 
       .pricing-card {
         background-color: white;
-        border-radius: 15px;
+        border-radius: 18px;
         padding: 30px;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
         transition: transform 0.3s ease;
         position: relative;
         overflow: hidden;
         border: 1px solid #eee;
       }
 
-      .pricing-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
+      .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
       .pricing-card.featured {
         border: 2px solid var(--primary);
@@ -291,23 +209,31 @@
         border-bottom-left-radius: 10px;
       }
 
-      .price {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: var(--primary);
-        margin: 20px 0;
+      .price { font-size: 2.5rem; font-weight: bold; color: var(--primary); margin: 20px 0; }
+      .price-period { display: block; font-size: 1rem; color: #888; }
+
+      .price-original {
+        font-size: 1.1rem;
+        color: #aaa;
+        text-decoration: line-through;
+        margin-bottom: 4px;
       }
 
-      .price-period {
-        display: block;
-        font-size: 1rem;
-        color: #888;
+      .price-discount-badge {
+        display: inline-block;
+        background: var(--fuchsia-deep);
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 8px;
       }
 
       .pricing-features {
         list-style: none;
         margin: 20px 0;
-        min-height: 200px;
+        min-height: 160px;
       }
 
       .pricing-features li {
@@ -315,96 +241,167 @@
         border-bottom: 1px solid #eee;
       }
 
-      .pricing-features li:last-child {
-        border-bottom: none;
+      .pricing-features li:last-child { border-bottom: none; }
+
+      /* Cycle header */
+      .cycle-header {
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin: 40px 0 25px;
+        color: var(--fuchsia-text);
+        background: var(--fuchsia-bg);
+        padding: 14px 30px;
+        border-radius: 50px;
+        display: inline-block;
+        width: 100%;
       }
 
-      /* Discounts section */
-      .discounts {
-        background-color: var(--light);
+      /* Early bird banner */
+      .early-bird-banner {
+        background: linear-gradient(135deg, var(--fuchsia-deep), #c2006a);
+        color: white;
+        border-radius: 16px;
+        padding: 20px 30px;
+        text-align: center;
+        margin: 30px 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        box-shadow: 0 6px 20px rgba(233,30,140,0.3);
+        letter-spacing: 0.01em;
+      }
+
+      .early-bird-banner span { font-size: 1.4rem; }
+
+      /* Swimming course card */
+      .swim-course-card {
+        background: linear-gradient(135deg, #e0f7ff, #b3eaff);
+        border: 2px solid #06b6d4;
+        border-radius: 18px;
         padding: 30px;
-        border-radius: 15px;
+        text-align: center;
+        margin-top: 50px;
+        box-shadow: 0 8px 24px rgba(6,182,212,0.15);
+      }
+
+      .swim-course-card h3 {
+        font-size: 1.6rem;
+        color: var(--primary);
+        margin-bottom: 12px;
+      }
+
+      .swim-course-card .swim-prices {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 16px 0;
+      }
+
+      .swim-price-original { font-size: 1.3rem; color: #aaa; text-decoration: line-through; }
+      .swim-price-new { font-size: 2rem; font-weight: 900; color: var(--primary); }
+
+      /* Discounts */
+      .discounts {
+        background: linear-gradient(135deg, #fff5fb, var(--fuchsia-bg));
+        padding: 40px;
+        border-radius: 20px;
         margin-top: 50px;
         text-align: center;
+        border: 1px solid var(--fuchsia-mid);
       }
 
       .discount-title {
-        color: var(--primary);
-        font-size: 1.5rem;
+        color: var(--fuchsia-text);
+        font-size: 1.6rem;
         margin-bottom: 20px;
+        font-weight: 800;
       }
 
-      .discount-list {
-        list-style: none;
-        max-width: 600px;
-        margin: 0 auto;
-      }
+      .discount-list { list-style: none; max-width: 600px; margin: 0 auto; }
 
       .discount-list li {
-        padding: 10px 0;
+        padding: 12px 0;
         font-size: 1.1rem;
+        border-bottom: 1px dashed #f0c0e0;
       }
 
-      .discount-list li i {
-        color: var(--secondary);
-        margin-left: 10px;
-      }
+      .discount-list li:last-child { border-bottom: none; }
+      .discount-list li i { color: var(--fuchsia-deep); margin-left: 10px; }
 
-      /* Contact section */
+      /* Contact */
       .contact-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
       }
 
       .contact-info {
         background-color: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .contact-form {
-        background-color: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-      }
-
-      input,
-      textarea {
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        max-width: 500px;
         width: 100%;
-        padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-family: "Heebo", sans-serif;
-        font-size: 1rem;
       }
 
-      textarea {
-        min-height: 120px;
-        resize: vertical;
+      /* ===== FUCHSIA FORM CARD ===== */
+      .form-section-wrapper {
+        background: linear-gradient(160deg, #fde8f5 0%, #fcc8e8 50%, #fad5f0 100%);
+        padding: 60px 20px;
       }
 
-      button {
-        cursor: pointer;
+      .form-card {
+        max-width: 820px;
+        margin: 0 auto;
+        background: linear-gradient(145deg, #fce4f3, #ffd0ed);
+        border-radius: 28px;
+        padding: 40px 36px 36px;
+        box-shadow: 0 20px 60px rgba(233,30,140,0.18), 0 4px 16px rgba(233,30,140,0.1);
+        text-align: center;
+        border: 1.5px solid rgba(255,180,230,0.8);
+      }
+
+      .form-card-title {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--fuchsia-text);
+        margin-bottom: 8px;
+      }
+
+      .form-card-subtitle {
+        font-size: 1.05rem;
+        color: #b0457a;
+        margin-bottom: 24px;
+      }
+
+      .form-card iframe {
+        width: 100%;
+        height: 620px;
+        border-radius: 18px;
         border: none;
+        background: white;
+        box-shadow: 0 4px 20px rgba(233,30,140,0.12);
       }
+
+      .whatsapp-group-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #25d366;
+        color: white;
+        padding: 14px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-top: 24px;
+        box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+        transition: all 0.3s;
+      }
+
+      .whatsapp-group-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(37,211,102,0.4); }
 
       /* Footer */
       footer {
@@ -414,33 +411,16 @@
         text-align: center;
       }
 
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-bottom: 30px;
-      }
+      .footer-links { display: flex; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+      .footer-links a { color: white; margin: 0 15px; text-decoration: none; transition: color 0.3s; }
+      .footer-links a:hover { color: var(--accent); }
 
-      .footer-links a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .footer-links a:hover {
-        color: var(--accent);
-      }
-
-      .social-links {
-        margin: 20px 0;
-      }
-
+      .social-links { margin: 20px 0; }
       .social-links a {
         display: inline-block;
         width: 40px;
         height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255,255,255,0.1);
         border-radius: 50%;
         margin: 0 10px;
         color: white;
@@ -448,669 +428,406 @@
         line-height: 40px;
         transition: all 0.3s;
       }
+      .social-links a:hover { background-color: var(--primary); transform: translateY(-3px); }
+      .copyright { margin-top: 30px; color: rgba(255,255,255,0.6); font-size: 0.9rem; }
 
-      .social-links a:hover {
-        background-color: var(--primary);
-        transform: translateY(-3px);
-      }
-
-      .copyright {
-        margin-top: 30px;
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 0.9rem;
-      }
-
-      /* Animation utilities */
-      .fade-in {
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-
-      .fade-in.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Special effects */
-      .highlight {
-        color: var(--secondary);
-        font-weight: bold;
-      }
-
-      .text-gradient {
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-      }
-
-      /* Floating bubbles animation in header */
-      .bubbles {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-      }
-
+      /* Bubbles */
+      .bubbles { position: absolute; width: 100%; height: 100%; z-index: 0; overflow: hidden; top: 0; left: 0; }
       .bubble {
         position: absolute;
         bottom: -100px;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255,255,255,0.1);
         border-radius: 50%;
         animation: rise 10s infinite ease-in;
       }
-
-      .bubble:nth-child(1) {
-        width: 40px;
-        height: 40px;
-        left: 10%;
-        animation-duration: 8s;
-      }
-
-      .bubble:nth-child(2) {
-        width: 20px;
-        height: 20px;
-        left: 20%;
-        animation-duration: 5s;
-        animation-delay: 1s;
-      }
-
-      .bubble:nth-child(3) {
-        width: 50px;
-        height: 50px;
-        left: 35%;
-        animation-duration: 7s;
-        animation-delay: 2s;
-      }
-
-      .bubble:nth-child(4) {
-        width: 80px;
-        height: 80px;
-        left: 50%;
-        animation-duration: 11s;
-        animation-delay: 0s;
-      }
-
-      .bubble:nth-child(5) {
-        width: 35px;
-        height: 35px;
-        left: 55%;
-        animation-duration: 6s;
-        animation-delay: 1s;
-      }
-
-      .bubble:nth-child(6) {
-        width: 45px;
-        height: 45px;
-        left: 65%;
-        animation-duration: 8s;
-        animation-delay: 3s;
-      }
-
-      .bubble:nth-child(7) {
-        width: 25px;
-        height: 25px;
-        left: 75%;
-        animation-duration: 7s;
-        animation-delay: 2s;
-      }
-
-      .bubble:nth-child(8) {
-        width: 80px;
-        height: 80px;
-        left: 80%;
-        animation-duration: 10s;
-        animation-delay: 1s;
-      }
-
-      .bubble:nth-child(9) {
-        width: 15px;
-        height: 15px;
-        left: 70%;
-        animation-duration: 6s;
-        animation-delay: 0s;
-      }
-
-      .bubble:nth-child(10) {
-        width: 50px;
-        height: 50px;
-        left: 85%;
-        animation-duration: 5s;
-        animation-delay: 3s;
-      }
+      .bubble:nth-child(1) { width:40px; height:40px; left:10%; animation-duration:8s; }
+      .bubble:nth-child(2) { width:20px; height:20px; left:20%; animation-duration:5s; animation-delay:1s; }
+      .bubble:nth-child(3) { width:50px; height:50px; left:35%; animation-duration:7s; animation-delay:2s; }
+      .bubble:nth-child(4) { width:80px; height:80px; left:50%; animation-duration:11s; }
+      .bubble:nth-child(5) { width:35px; height:35px; left:55%; animation-duration:6s; animation-delay:1s; }
+      .bubble:nth-child(6) { width:45px; height:45px; left:65%; animation-duration:8s; animation-delay:3s; }
+      .bubble:nth-child(7) { width:25px; height:25px; left:75%; animation-duration:7s; animation-delay:2s; }
+      .bubble:nth-child(8) { width:80px; height:80px; left:80%; animation-duration:10s; animation-delay:1s; }
+      .bubble:nth-child(9) { width:15px; height:15px; left:70%; animation-duration:6s; }
+      .bubble:nth-child(10) { width:50px; height:50px; left:85%; animation-duration:5s; animation-delay:3s; }
 
       @keyframes rise {
-        0% {
-          bottom: -100px;
-          transform: translateX(0);
-        }
-        50% {
-          transform: translateX(100px);
-        }
-        100% {
-          bottom: 1080px;
-          transform: translateX(-200px);
-        }
+        0%   { bottom: -100px; transform: translateX(0); }
+        50%  { transform: translateX(100px); }
+        100% { bottom: 1080px; transform: translateX(-200px); }
       }
 
-      /* Responsive styles */
+      /* Responsive */
       @media (max-width: 768px) {
-        h1 {
-          font-size: 2.5rem;
-        }
-
-        .header-tagline {
-          font-size: 1.2rem;
-        }
-
-        .features,
-        .pricing-cards {
-          grid-template-columns: 1fr;
-        }
-
-        section {
-          padding: 60px 0;
-        }
-
-        .nav-container {
-          flex-direction: column;
-        }
-
-        .nav-links {
-          margin-top: 15px;
-        }
+        h1 { font-size: 2.2rem; }
+        .header-tagline { font-size: 1.1rem; }
+        .features, .pricing-cards { grid-template-columns: 1fr; }
+        section { padding: 55px 0; }
+        .nav-container { flex-direction: column; }
+        .nav-links { margin-top: 10px; }
+        .form-card { padding: 24px 16px; }
+        .form-card iframe { height: 560px; }
+        .cycle-header { font-size: 1.2rem; padding: 10px 18px; }
       }
     </style>
   </head>
   <body>
+
     <nav>
       <div class="container nav-container">
-        <a class="logo" href="#">קייטנת ספורט וחוויה עם אשר</a>
+        <a class="logo" href="#">קייטנת ספורט וחוויה</a>
         <ul class="nav-links">
-          <li><a href="#camp-location">איפה ומתי </a></li>
+          <li><a href="#camp-location">איפה ומתי</a></li>
           <li><a href="#about">אודות</a></li>
           <li><a href="#schedule">לוח זמנים</a></li>
           <li><a href="#pricing">מחירים</a></li>
           <li><a href="#discounts">הנחות</a></li>
+          <li><a href="#register">הרשמה</a></li>
           <li><a href="#contact">צור קשר</a></li>
         </ul>
       </div>
     </nav>
+
     <header>
       <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
         <div class="bubble"></div>
       </div>
-      <div class="header-bg"></div>
       <div class="container">
         <div class="header-content animate__animated animate__fadeIn">
-          <div
-            style="
-              display: flex;
-              gap: 20px;
-              justify-content: center;
-              align-items: center;
-              margin-bottom: 20px;
-              flex-wrap: wrap;
-            "
-          >
-            <img
-              alt="לוגו טניס"
+          <div style="display:flex;gap:20px;justify-content:center;align-items:center;margin-bottom:20px;flex-wrap:wrap;">
+            <img alt="לוגו טניס"
               src="https://static.wixstatic.com/media/7cfd16_436c2aff8d0f48bbb95d41395fb265e4~mv2.png/v1/fill/w_715,h_497,al_c,lg_1,q_85,enc_avif,quality_auto/%D7%9C%D7%95%D7%92%D7%95%20%D7%98%D7%A0%D7%99%D7%A1%20%D7%92%D7%9C%D7%99%20%D7%94%D7%93%D7%A8%20%D7%9C%D7%9C%D7%90%20%D7%A8%D7%A7%D7%A2.png"
-              style="width: 250px; border-radius: 15px"
-            /><img
-              alt="לוגו גלי הדר"
-              src="https://i.imgur.com/0Jlsf0P.jpeg"
-              style="
-                width: 150px;
-                border-radius: 15px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-              "
-            />
+              style="width:220px;border-radius:15px;" />
+            <img alt="לוגו גלי הדר" src="https://i.imgur.com/0Jlsf0P.jpeg"
+              style="width:140px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
           </div>
-          <h1 class="">
-            קייטנת ספורט וחוויה
-            <span class="text-gradient">עם אשר</span>
-            בקאנטרי גלי הדר
-          </h1>
-          <p class="header-tagline">
-            חוויה קיצית בלתי נשכחת עם פעילויות ספורט, יצירה והפעלות מיוחדות
-          </p>
+          <h1>קייטנת ספורט וחוויה<br/>בקאנטרי גלי הדר</h1>
+          <p class="header-tagline">חוויה קיצית בלתי נשכחת עם פעילויות ספורט, יצירה והפעלות מיוחדות</p>
           <div>
-            <a
-              class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s"
-              href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-              target="_blank"
-              >הרשמה לקייטנה</a
-            >
-            <a
-              class="btn btn-secondary animate__animated animate__fadeInUp animate__delay-1s"
-              href="#about"
-              >למידע המלא
-            </a>
+            <a class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s"
+               href="#register">הרשמה לקייטנה</a>
+            <a class="btn btn-secondary animate__animated animate__fadeInUp animate__delay-1s"
+               href="#about">למידע המלא</a>
           </div>
         </div>
       </div>
     </header>
+
     <section id="camp-location">
-      <div class="container" style="text-align: center">
+      <div class="container" style="text-align:center;">
         <h2 class="section-title">מיקום ותאריכים</h2>
-        <p style="font-size: 1.3rem; color: var(--primary); font-weight: bold; white-space: pre-line; margin-top: 20px;">📍 קאנטרי גלי הדר, ראשון לציון <br></br>
-          📅 תאריכי מחזורים:<br></br>
-          • 1.7–21.7 מחזור א<br></br>
-          • 22.7–11.8 מחזור ב<br></br>
-          • 12.8–20.8 מחזור ג</p>
+        <p style="font-size:1.3rem;color:var(--primary);font-weight:bold;line-height:2.2;">
+          📍 קאנטרי גלי הדר, ראשון לציון<br/>
+          📅 תאריכי מחזורים:<br/>
+          • מחזור א — 1.7–21.7<br/>
+          • מחזור ב — 22.7–11.8<br/>
+          • מחזור ג — 12.8–20.8
+        </p>
       </div>
     </section>
 
     <section id="about">
       <div class="container">
         <h2 class="section-title">ברוכים הבאים לקייטנת הקיץ שלנו</h2>
-        <p class="">
-          קייטנת הקיץ של גלי הדר מציעה חוויה מהנה, מאתגרת ובטוחה לילדים בכל
-          הגילאים. הקייטנה מנוהלת על ידי צוות מקצועי ומנוסה בראשות
-          <strong>מנהל אקדמיית טניס גלי הדר</strong>, בעל ניסיון רב בניהול
-          ועבודה עם ילדים לאורך כל השנה.
-        </p>
-        <p>
-          אנו פועלים בשיתוף עם רשת הקייטנות הארצית וועדי העובדים ארגונים וחברות
-          הגדולות במשק
-        </p>
-        <p class="">
-          קייטנת הקיץ מכילה מגוון פעילויות בהן
-          <strong>ימי תוכן עם נושאים מגוונים בתחומים שונים</strong>
-        </p>
-        <br></br>
-        <p>
-          מיקום: קאנטרי גלי הדר ראשון לציון תאריכים: 1.7-21.7 מחזור א 22.7-11.8
-          מחזור ב 12.8-20.8 מחזור ג
-        </p>
+        <p>קייטנת הקיץ של גלי הדר מציעה חוויה מהנה, מאתגרת ובטוחה לילדים בכל הגילאים. הקייטנה מנוהלת על ידי צוות מקצועי ומנוסה בראשות <strong>מנהל אקדמיית טניס גלי הדר</strong>, בעל ניסיון רב בניהול ועבודה עם ילדים לאורך כל השנה.</p>
+        <p style="margin-top:12px;">אנו פועלים בשיתוף עם רשת הקייטנות הארצית וועדי העובדים ארגונים וחברות הגדולות במשק.</p>
+        <p style="margin-top:12px;">קייטנת הקיץ מכילה מגוון פעילויות בהן <strong>ימי תוכן עם נושאים מגוונים בתחומים שונים</strong>.</p>
         <div class="features">
           <div class="feature-box">
             <i class="fas fa-swimming-pool feature-icon"></i>
             <h3 class="feature-title">פעילויות מים</h3>
-            <p class="">
-              הילדים נהנים מפעילויות בבריכה כולל מגלשות ומתנפחים בסביבה בטוחה
-              ומהנה
-            </p>
+            <p>הילדים נהנים מפעילויות בבריכה כולל מגלשות ומתנפחים בסביבה בטוחה ומהנה</p>
           </div>
           <div class="feature-box">
             <i class="fas fa-palette feature-icon"></i>
             <h3 class="feature-title">יצירה ואמנות</h3>
-            <p class="">פעילויות יצירה מגוונות לפיתוח הדמיון והיצירתיות</p>
+            <p>פעילויות יצירה מגוונות לפיתוח הדמיון והיצירתיות</p>
           </div>
           <div class="feature-box">
             <i class="fas fa-table-tennis feature-icon"></i>
             <h3 class="feature-title">פעילויות ספורט</h3>
-            <p class="">טניס, פאדל ופעילויות ספורט נוספות להנאה ולכושר גופני</p>
+            <p>טניס, פאדל ופעילויות ספורט נוספות להנאה ולכושר גופני</p>
           </div>
           <div class="feature-box">
             <i class="fas fa-bullseye feature-icon"></i>
             <h3 class="feature-title">אטרקציות מיוחדות</h3>
-            <p class="">
-              פארק דרקונים ועוד המון הפתעות
-            </p>
+            <p>פארק דרקונים ועוד המון הפתעות</p>
           </div>
           <div class="feature-box">
             <i class="fas fa-utensils feature-icon"></i>
             <h3 class="feature-title">ארוחות מזינות</h3>
-            <p class="">ארוחת בוקר וארוחת צהריים מזינות לאנרגיה לאורך היום</p>
+            <p>ארוחת בוקר וארוחת צהריים מזינות לאנרגיה לאורך היום</p>
           </div>
           <div class="feature-box">
             <i class="fas fa-trophy feature-icon"></i>
             <h3 class="feature-title">פרסים והפתעות</h3>
-            <p class="">
-              חלוקת מדליות וגביעים לקייטנים מצטיינים (כולם זוכים! 😉)
-            </p>
+            <p>חלוקת מדליות וגביעים לקייטנים מצטיינים (כולם זוכים! 😉)</p>
           </div>
         </div>
-        <h2 class="section-title" style="color: #ce00ff;">מפגש צוות הקייטנה עם הורים יומיים-שלושה לפני פתיחת הקייטנה</h2>
+        <h2 class="section-title" style="color:#ce00ff;margin-top:50px;">מפגש צוות הקייטנה עם הורים יומיים-שלושה לפני פתיחת הקייטנה</h2>
       </div>
     </section>
-    <section id="schedule" style="background-color: var(--light)">
+
+    <section id="schedule" style="background-color:var(--light);">
       <div class="container">
         <h2 class="section-title">סדר היום שלנו</h2>
         <div class="schedule">
-          <div class="schedule-item">
-            <div class="schedule-time">7:45-8:00</div>
-            <div class="schedule-activity">התכנסות</div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">8:00</div>
-            <div class="schedule-activity">פעילות בתחנות ספורט, יצירות ומשחקים 🕹️ </div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">10:00</div>
-            <div class="schedule-activity">ארוחת בוקר 🥪</div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">10:30 - 12:00</div>
-            <div class="schedule-activity">
-              בריכה / הפעלות חיצוניות / ימי תוכן 🤩
-            </div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">12:00 - 12:45</div>
-            <div class="schedule-activity">משחקי חברה 🎲</div>
-          </div>
-          <div class="schedule-item">
-            <div class="schedule-time">12:45</div>
-            <div class="schedule-activity">שיחת סיכום יום 😍</div>
-          </div>
+          <div class="schedule-item"><div class="schedule-time">7:45–8:00</div><div>התכנסות</div></div>
+          <div class="schedule-item"><div class="schedule-time">8:00</div><div>פעילות בתחנות ספורט, יצירות ומשחקים 🕹️</div></div>
+          <div class="schedule-item"><div class="schedule-time">10:00</div><div>ארוחת בוקר 🥪</div></div>
+          <div class="schedule-item"><div class="schedule-time">10:30–12:00</div><div>בריכה / הפעלות חיצוניות / ימי תוכן 🤩</div></div>
+          <div class="schedule-item"><div class="schedule-time">12:00–12:45</div><div>משחקי חברה 🎲</div></div>
+          <div class="schedule-item"><div class="schedule-time">12:45</div><div>שיחת סיכום יום 😍</div></div>
         </div>
-        <div class="" style="margin-top: 30px">
-          <h3 class="" style="color: var(--primary); margin-bottom: 15px">
-            הפעילויות וימי התוכן שלנו כוללים:
-          </h3>
-          <p class="">
-            <strong>משחקי חברה:</strong> משחקי קופסא, ריקוד ועוד...
-          </p>
-          <p class="">
-            <strong>הפעלות חיצוניות וימי תוכן:</strong> פארק דרקונים
-             כדורגל, טניס, פאדל ועוד...
-          </p>
-          <p class="">
-            <strong>* כל הפעילות בקאנטרי ללא יציאה מחוץ למקום</strong>
-          </p>
-          <p class="">
-            <strong>* הפעלות ואטרקציות חיצוניות שמגיעות לקאנטרי</strong>
-          </p>
+        <div style="margin-top:30px;">
+          <h3 style="color:var(--primary);margin-bottom:15px;">הפעילויות וימי התוכן שלנו כוללים:</h3>
+          <p><strong>משחקי חברה:</strong> משחקי קופסא, ריקוד ועוד...</p>
+          <p style="margin-top:8px;"><strong>הפעלות חיצוניות וימי תוכן:</strong> פארק דרקונים, כדורגל, טניס, פאדל ועוד...</p>
+          <p style="margin-top:8px;"><strong>* כל הפעילות בקאנטרי ללא יציאה מחוץ למקום</strong></p>
+          <p style="margin-top:8px;"><strong>* הפעלות ואטרקציות חיצוניות שמגיעות לקאנטרי</strong></p>
         </div>
       </div>
     </section>
+
+    <!-- PRICING -->
     <section id="pricing">
       <div class="container">
         <h2 class="section-title">מחירון</h2>
-        <h3 class="" style="text-align: center; margin-bottom: 30px">
-          מחזור א' + ב'
-        </h3>
+
+        <!-- Early Bird Banner -->
+        <div class="early-bird-banner">
+          🔥 <span>הרשמה מוקדמת עד 15.5 — 10% הנחה!</span> 🔥<br/>
+          <span style="font-size:1rem;font-weight:400;">אח שני — 5% הנחה נוספת</span>
+        </div>
+
+        <!-- Cycles A+B -->
+        <div class="cycle-header">מחזור א׳ + ב׳</div>
+
         <div class="pricing-cards">
+
+          <!-- קייטנת בוקר -->
           <div class="pricing-card">
-            <h3 class="">יום קצר</h3>
-            <div class="price">
-              ₪2600<span class="price-period">למחזור</span>
-            </div>
+            <h3>קייטנת בוקר</h3>
+            <div class="price">₪2,600<span class="price-period">למחזור</span></div>
             <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-13:00</li>
+              <li><strong>שעות:</strong> 8:00–13:00</li>
               <li>כולל ארוחת בוקר</li>
               <li>פעילויות מגוונות</li>
-              <li>אטרקציות חיצונית לכל מחזור</li>
+              <li>אטרקציות לכל מחזור</li>
             </ul>
-            <a
-              class="btn btn-primary"
-              href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-              target="_blank"
-              >הרשמה עכשיו</a
-            >
+            <div style="margin-bottom:14px;">
+              <div class="price-discount-badge">🎉 הנחה מוקדמת עד 15.5</div>
+              <div style="font-size:1.4rem;font-weight:800;color:var(--fuchsia-text);">₪2,340</div>
+            </div>
+            <a class="btn btn-primary" href="https://forms.gle/RfmYzmxaYg4wfdUh7" target="_blank">הרשמה עכשיו</a>
           </div>
-          
+
+          <!-- בוקר עם צהריים -->
+          <div class="pricing-card">
+            <h3>בוקר + ארוחת צהריים</h3>
+            <div class="price">₪3,250<span class="price-period">למחזור</span></div>
+            <ul class="pricing-features">
+              <li><strong>שעות:</strong> 8:00–14:00</li>
+              <li>כולל ארוחת בוקר</li>
+              <li>כולל ארוחת צהריים</li>
+              <li>פעילויות מגוונות</li>
+            </ul>
+            <div style="margin-bottom:14px;">
+              <div class="price-discount-badge">🎉 הנחה מוקדמת עד 15.5</div>
+              <div style="font-size:1.4rem;font-weight:800;color:var(--fuchsia-text);">₪2,925</div>
+            </div>
+            <a class="btn btn-primary" href="https://forms.gle/RfmYzmxaYg4wfdUh7" target="_blank">הרשמה עכשיו</a>
+          </div>
+
+          <!-- צהרון עד 16:00 -->
           <div class="pricing-card featured">
-            <h3 class="">יום ארוך</h3>
-            <div class="price">
-              ₪3450<span class="price-period">למחזור</span>
-            </div>
+            <h3>צהרון עם ארוחה חמה</h3>
+            <div class="price">₪3,450<span class="price-period">למחזור</span></div>
             <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-16:00</li>
+              <li><strong>שעות:</strong> 8:00–16:00</li>
               <li>כולל ארוחת בוקר</li>
-              <li>כולל ארוחת צהריים</li>
-              <li>פעילויות אחה"צ נוספות</li>
-              <li>אטרקציות חיצונית לכל מחזור</li>
+              <li>כולל ארוחה חמה</li>
+              <li>פעילויות אחה"צ</li>
+              <li>אטרקציות לכל מחזור</li>
             </ul>
-            <a
-              class="btn btn-primary"
-              href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-              target="_blank"
-              >הרשמה עכשיו</a
-            >
+            <div style="margin-bottom:14px;">
+              <div class="price-discount-badge">🎉 הנחה מוקדמת עד 15.5</div>
+              <div style="font-size:1.4rem;font-weight:800;color:var(--fuchsia-text);">₪3,105</div>
+            </div>
+            <a class="btn btn-primary" href="https://forms.gle/RfmYzmxaYg4wfdUh7" target="_blank">הרשמה עכשיו</a>
           </div>
+
+          <!-- עד 16:30 -->
+          <div class="pricing-card">
+            <h3>יום מלא עד 16:30</h3>
+            <div class="price">₪3,800<span class="price-period">למחזור</span></div>
+            <ul class="pricing-features">
+              <li><strong>שעות:</strong> 8:00–16:30</li>
+              <li>כולל ארוחת בוקר</li>
+              <li>כולל ארוחה חמה</li>
+              <li>פעילויות ואטרקציות</li>
+            </ul>
+            <div style="margin-bottom:14px;">
+              <div class="price-discount-badge">🎉 הנחה מוקדמת עד 15.5</div>
+              <div style="font-size:1.4rem;font-weight:800;color:var(--fuchsia-text);">₪3,420</div>
+            </div>
+            <a class="btn btn-primary" href="https://forms.gle/RfmYzmxaYg4wfdUh7" target="_blank">הרשמה עכשיו</a>
+          </div>
+
         </div>
-        <div class="" style="text-align: center; margin: 20px 0">
-          <p class="">
-            <strong
-              >אפשרות ליום ארוך עד 16:30 בתוספת 300 ש"ח לכל מחזור, לתיאום נא
-              לפנות לאשר.</strong
-            >
-          </p>
-        </div>
-        <!-- <h3 class="" style="text-align: center; margin: 40px 0 30px">
-          מחיר להרשמה מוקדמת (עד 5.5 בלבד)
-        </h3>
+
+        <!-- Cycle C -->
+        <div class="cycle-header" style="margin-top:50px;">מחזור ג׳ — 12.8–20.8</div>
+
         <div class="pricing-cards">
+
           <div class="pricing-card">
-            <h3 class="">בוקר</h3>
-            <div class="price">
-              ₪1900<span class="price-period">למחזור</span>
-            </div>
+            <h3>קייטנת בוקר</h3>
+            <div class="price">₪1,250<span class="price-period">למחזור</span></div>
             <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-13:00</li>
-              <li>כולל ארוחת בוקר</li>
-              <li>פעילויות מגוונות</li>
-              <li>אטרקציות חיצונית לכל מחזור</li>
-            </ul>
-            <a
-              class="btn btn-primary"
-              href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-              target="_blank"
-              >הרשמה עכשיו</a
-            >
-          </div>
-          <div class="pricing-card">
-            <h3 class="">יום רגיל</h3>
-            <div class="price">
-              ₪2600<span class="price-period">למחזור</span>
-            </div>
-            <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-14:00</li>
-              <li>כולל ארוחת בוקר</li>
-              <li>כולל ארוחת צהריים</li>
-              <li>פעילויות מגוונות</li>
-              <li>אטרקציות חיצונית לכל מחזור</li>
-            </ul>
-            <a
-              class="btn btn-primary"
-              href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-              target="_blank"
-              >הרשמה עכשיו</a
-            >
-          </div>
-          <div class="pricing-card">
-            <h3 class="">יום ארוך</h3>
-            <div class="price">
-              ₪2850<span class="price-period">למחזור</span>
-            </div>
-            <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-16:00</li>
-              <li>כולל ארוחת בוקר</li>
-              <li>כולל ארוחת צהריים</li>
-              <li>פעילויות מגוונות</li>
-              <li>אטרקציות חיצונית לכל מחזור</li>
-            </ul>
-            <a
-              class="btn btn-primary"
-              href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-              target="_blank"
-              >הרשמה עכשיו</a
-            >
-          </div>
-        </div>
-      </div> -->
-      <div class="container" style="margin-top: 60px">
-        <h3 class="section-title">מחזור ג'</h3>
-        <div class="pricing-cards">
-          <div class="pricing-card">
-            <h3 class="">בוקר</h3>
-            <div class="price">
-              ₪1250<span class="price-period">למחזור</span>
-            </div>
-            <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-13:00</li>
+              <li><strong>שעות:</strong> 8:00–13:00</li>
               <li>כולל ארוחת בוקר</li>
               <li>פעילויות מגוונות</li>
             </ul>
-            <a
-            class="btn btn-primary"
-            href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-            target="_blank"
-            >הרשמה עכשיו</a
-          >
+            <a class="btn btn-primary" href="https://forms.gle/RfmYzmxaYg4wfdUh7" target="_blank">הרשמה עכשיו</a>
           </div>
-          <div class="pricing-card">
-            <h3 class="">יום ארוך</h3>
-            <div class="price">
-              ₪1750<span class="price-period">למחזור</span>
-            </div>
-            <ul class="pricing-features featured">
-              <li><strong>שעות:</strong> 8:00-16:00</li>
+
+          <div class="pricing-card featured">
+            <h3>צהרון עם ארוחה חמה</h3>
+            <div class="price">₪1,750<span class="price-period">למחזור</span></div>
+            <ul class="pricing-features">
+              <li><strong>שעות:</strong> 8:00–16:00</li>
               <li>כולל ארוחת בוקר וצהריים</li>
               <li>פעילויות ואטרקציות</li>
             </ul>
-            <a
-            class="btn btn-primary"
-            href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-            target="_blank"
-            >הרשמה עכשיו</a
-          >
-          <!-- </div>
-          <div class="pricing-card">
-            <h3 class="">עד 16:30</h3>
-            <div class="price">
-              ₪2200<span class="price-period">למחזור</span>
+            <a class="btn btn-primary" href="https://forms.gle/RfmYzmxaYg4wfdUh7" target="_blank">הרשמה עכשיו</a>
+          </div>
+
+        </div>
+
+        <!-- Swimming Course -->
+        <div class="swim-course-card">
+          <h3>🏊 קורס שחייה — בונוס לנרשמים לקייטנה!</h3>
+          <p style="font-size:1.05rem;color:#0077aa;margin-bottom:12px;">10 שעות שחייה בהדרכה מקצועית — מוגבל לנרשמי הקייטנה</p>
+          <div class="swim-prices">
+            <div>
+              <div class="swim-price-original">₪1,350</div>
+              <div style="font-size:0.85rem;color:#aaa;">מחיר רגיל</div>
             </div>
-            <ul class="pricing-features">
-              <li><strong>שעות:</strong> 8:00-16:30</li>
-              <li>כולל כל הפעילויות והארוחות</li>
-            </ul>
-            <a
-            class="btn btn-primary"
-            href="https://forms.gle/RfmYzmxaYg4wfdUh7"
-            target="_blank"
-            >הרשמה עכשיו</a
-          >
-          </div>  -->
+            <div style="font-size:2rem;color:#aaa;">←</div>
+            <div>
+              <div class="swim-price-new">₪950</div>
+              <div style="font-size:0.85rem;color:var(--primary);">מחיר מיוחד לנרשמי קייטנה</div>
+            </div>
+          </div>
+          <p style="font-size:0.95rem;color:#555;">לתיאום ופרטים — <a href="tel:0533331510" style="color:var(--primary);font-weight:bold;">אשר 053-333-1510</a></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DISCOUNTS -->
+    <section id="discounts">
+      <div class="container">
+        <div class="discounts">
+          <h3 class="discount-title">🎁 הנחות מיוחדות</h3>
+          <p style="color:#b0457a;margin-bottom:18px;font-size:0.95rem;">(אין הנחות כפולות)</p>
+          <ul class="discount-list">
+            <li><i class="fas fa-check-circle"></i> 🔥 הרשמה מוקדמת עד 15.5 — <strong>10% הנחה!</strong></li>
+            <li><i class="fas fa-check-circle"></i> אח שני — <strong>5% הנחה</strong></li>
+            <li><i class="fas fa-check-circle"></i> 10% הנחה לילד שני</li>
+            <li><i class="fas fa-check-circle"></i> 5% למחזור ב למסיימי מחזור א מלא</li>
+            <li><i class="fas fa-check-circle"></i> 10% למסיימי מחזור מלא א׳ או ב׳ הנרשמים למחזור ג׳</li>
+          </ul>
+          <p style="margin-top:22px;font-size:1rem;color:#555;">לתיאום ופרטים — <a href="tel:0533331510" style="color:var(--fuchsia-deep);font-weight:bold;">אשר 053-333-1510</a></p>
         </div>
       </div>
     </section>
-    <section id="discounts">
-      <div class="container discounts">
-        <h3 class="discount-title">הנחות מיוחדות (אין הנחות כפולות)</h3>
-        <ul class="discount-list">
-          <li><i class="fas fa-check-circle"></i>10% הנחה לילד שני</li>
-          <li>
-            <i class="fas fa-check-circle"></i>5% למחזור ב למסיימי מחזור א מלא
-          </li>
-          <li>
-            <i class="fas fa-check-circle"></i>10% למסיימי מחזור מלא א' או ב'
-            הנרשמים למחזור ג'
-          </li>
-        </ul>
-      </div>
-    </section>
-    <!-- <section id="copyright">
-      <p>
-        אנו פועלים בשיתוף עם רשת הקייטנות הארצית וועדי העובדים ארגונים וחברות
-        הגדולות במשק
-      </p>
-    </section> -->
+
+    <!-- TESTIMONIALS -->
     <section id="testimonials">
       <div class="container">
         <h2 class="section-title">ביקורות מהורים מרוצים</h2>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-          "
-        >
-          <div
-            style="
-              background: white;
-              padding: 20px;
-              border-radius: 15px;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            "
-          >
-            <p>
-              "הבן שלי חזר כל יום עם חיוך מאוזן לאוזן, זו הקייטנה הכי טובה
-              שהייתה לו אי פעם!"
-            </p>
-            <p><strong>- שרון, אמא של נועם</strong></p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
+          <div style="background:white;padding:24px;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+            <p>"הבן שלי חזר כל יום עם חיוך מאוזן לאוזן, זו הקייטנה הכי טובה שהייתה לו אי פעם!"</p>
+            <p style="margin-top:12px;"><strong>- שרון, אמא של נועם</strong></p>
           </div>
-          <div
-            style="
-              background: white;
-              padding: 20px;
-              border-radius: 15px;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            "
-          >
+          <div style="background:white;padding:24px;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
             <p>"הצוות היה מדהים והפעילויות מושקעות, ממליצה בחום לכל הורה!"</p>
-            <p><strong>- מיכל, אמא של ליה</strong></p>
+            <p style="margin-top:12px;"><strong>- מיכל, אמא של ליה</strong></p>
           </div>
-          <div
-            style="
-              background: white;
-              padding: 20px;
-              border-radius: 15px;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            "
-          >
+          <div style="background:white;padding:24px;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
             <p>"הבן שלי כבר שואל מתי מתחילה הקייטנה הבאה!"</p>
-            <p><strong>- דוד, אבא של עידו</strong></p>
+            <p style="margin-top:12px;"><strong>- דוד, אבא של עידו</strong></p>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 40px">
-          <a
-            class="btn btn-primary"
-            href="https://drive.google.com/drive/folders/1inbLoTQlUlJHAzecxCKiS_R5LtEFdqLo?usp=drive_link"
-            style="font-size: 1.2rem"
-            target="_blank"
-          >
+        <div style="text-align:center;margin-top:40px;">
+          <a class="btn btn-primary"
+             href="https://drive.google.com/drive/folders/1inbLoTQlUlJHAzecxCKiS_R5LtEFdqLo?usp=drive_link"
+             style="font-size:1.1rem;" target="_blank">
             צפו בביקורות מתוך קבוצת הווצאפ
           </a>
         </div>
       </div>
     </section>
+
+    <!-- REGISTRATION FORM — FUCHSIA CARD -->
+    <div class="form-section-wrapper" id="register">
+      <div class="form-card">
+        <div class="form-card-title">📋 טופס הרשמה לקייטנה</div>
+        <div class="form-card-subtitle">ממלאים, שולחים ומתחילים לחכות לקיץ 🌞</div>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeOZeZiD7kNm5jFOqOnqXCZUl3IakVrZiQSCexCvdNezSgE3g/viewform?embedded=true"
+          frameborder="0" marginheight="0" marginwidth="0">בטעינה…</iframe>
+
+        <div style="margin-top:28px;">
+          <p style="font-size:1rem;color:var(--fuchsia-text);font-weight:700;margin-bottom:12px;">
+            הצטרפו לקבוצת מתעניינים בוואטסאפ:
+          </p>
+          <a class="whatsapp-group-btn" href="https://chat.whatsapp.com/J3Yoo82IO1jLsM3Uomqf8b" target="_blank">
+            <i class="fab fa-whatsapp" style="font-size:1.4rem;"></i>
+            קבוצת מתעניינים — קאנטרי גלי הדר
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
     <section id="contact">
       <div class="container contact-container">
         <div class="contact-info">
           <h2 class="section-title">צור קשר</h2>
-          <p><strong>אשר כהן</strong></p>
-          <p>
+          <p style="font-size:1.2rem;margin-bottom:12px;"><strong>אשר כהן</strong></p>
+          <p style="margin-bottom:20px;">
             טלפון:
-            <a
-              href="tel:0533331510"
-              style="color: var(--primary); font-weight: bold"
-              >053-333-1510</a
-            >
-          </p>
-          <p>
-            שלחו הודעה בוואטסאפ:
-            <a
-              class="btn btn-primary"
-              href="https://api.whatsapp.com/send/?phone=9720533331510&amp;text&amp;app_absent=0"
-              style="display: inline-block; margin-top: 10px"
-              target="_blank"
-            >
-              שלח הודעה בוואטסאפ
+            <a href="tel:0533331510" style="color:var(--primary);font-weight:bold;font-size:1.2rem;">
+              053-333-1510
             </a>
           </p>
+          <a class="btn btn-primary"
+             href="https://api.whatsapp.com/send/?phone=9720533331510&text&app_absent=0"
+             target="_blank"
+             style="font-size:1.1rem;">
+            <i class="fab fa-whatsapp"></i> שלח הודעה בוואטסאפ
+          </a>
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="#about">אודות</a>
+        <a href="#schedule">לוח זמנים</a>
+        <a href="#pricing">מחירים</a>
+        <a href="#register">הרשמה</a>
+        <a href="#contact">צור קשר</a>
+      </div>
+      <p class="copyright">© 2025 קייטנת ספורט וחוויה — קאנטרי גלי הדר. כל הזכויות שמורות.</p>
+    </footer>
+
   </body>
 </html>
-<-v force redeploy -->
